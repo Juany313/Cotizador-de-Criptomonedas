@@ -7,6 +7,7 @@ import ErrorMessage from "./ErrorMessage"
 const CriptoSearchForm = () => {
     //Estado global
     const cryptourrencies = useCryptoStore((state)=> state.cryptourrencies)
+    const fetchData = useCryptoStore((state)=> state.fetchData)
 
     //Estados locales
     const [pair, setPair] = useState<Pair>({
@@ -30,8 +31,9 @@ const CriptoSearchForm = () => {
             setError('Todos los campos son obligatorios')
             return
         }
-        setError('')
+        
         //Consultar la API
+        fetchData(pair)
 
     }
 

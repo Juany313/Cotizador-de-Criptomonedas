@@ -21,3 +21,12 @@ export const PairSchema = z.object({
 })
 
 export const ErrorSchema = string()
+
+export const CryptoPriceSchema =z.object({
+    IMAGEURL: string(),
+    PRICE: string(),
+    HIGHDAY: string(),
+    LOWDAY: string(),
+    CHANGEPCT24HOUR: string(),
+    LASTUPDATE: string(),
+})
